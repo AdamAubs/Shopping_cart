@@ -1,0 +1,51 @@
+.productContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(240, 240, 240);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Ensure the card fits well in the grid */
+  width: 100%;
+  max-width: 300px;
+}
+
+.productContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.description {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  background-color: rgb(230, 230, 230);
+  padding: 12px;
+  border-radius: 8px;
+}

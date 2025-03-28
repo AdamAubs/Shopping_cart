@@ -1,0 +1,11 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 112, 187);
+}
+
+.shopBtn {
+  background-color: blue;
+  color: white;
+}
