@@ -1,4 +1,6 @@
 import styles from "./ButtonStyles.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function Button({ type, children, onClick }) {
   let buttonStyle;
@@ -7,17 +9,34 @@ export default function Button({ type, children, onClick }) {
     case "shop":
       buttonStyle = styles.shopBtn;
       break;
-    case "checkout":
-      buttonStyle = styles.checkout;
+    case "cart":
+      buttonStyle = styles.cart;
       break;
     case "purchase":
       buttonStyle = styles.purchase;
       break;
   }
 
-  return (
-    <button className={buttonStyle} onClick={onClick}>
-      {children}
-    </button>
-  );
+  if (type === "shop") {
+    return (
+      <p className={buttonStyle} onClick={onClick}>
+        {children}
+      </p>
+    );
+  } else if (type === "cart") {
+    return (
+      <p className={buttonStyle} onClick={onClick}>
+        {children}
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </p>
+    );
+  } else if (type === "purchase") {
+    return (
+      <p className={buttonStyle} onClick={onClick}>
+        {children}
+      </p>
+    );
+  } else {
+    return null;
+  }
 }

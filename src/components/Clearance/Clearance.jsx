@@ -16,7 +16,10 @@ export default function Clearance() {
 
   return (
     <div className={styles.clearanceContainer}>
-      <p>Clearance!</p>
+      <div className={styles.clearanceHeader}>
+        <h1>The Clearance Store</h1>
+        <i>Where Everything Is on Clearance</i>
+      </div>
       <div className={styles.productGrid}>
         {products.map((product) => (
           <ProductCard
@@ -25,6 +28,7 @@ export default function Clearance() {
             title={product.title}
             description={product.description}
             imageURL={product.image}
+            price={product.price}
             className={styles.productCard}
           />
         ))}

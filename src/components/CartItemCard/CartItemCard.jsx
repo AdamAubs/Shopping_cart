@@ -1,19 +1,19 @@
 import styles from "./CartItemCard.module.css";
 
-import { ShoppingCartContext } from "../../context/ShoppingCartContext";
-
 export default function CartItemCard({
   productID,
   title,
+  price,
   imgURL,
   quantity,
   removeOne,
   addOne,
 }) {
   return (
-    <div className={styles.cartItemCardContainer}>
+    <div className={styles.cartItemCardContainer} role="article">
       <div className={styles.text}>
         <h2 className={styles.title}>{title}</h2>
+        <p className={styles.price}> Price: {price}</p>
         <p className={styles.productID}> Product ID: {productID}</p>
         <p className={styles.quantity}> Quantity: {quantity}</p>
       </div>

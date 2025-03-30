@@ -27,6 +27,7 @@ export default function Cart() {
           key={item.productID}
           productID={item.productID}
           title={item.title}
+          price={item.price}
           imgURL={item.imageURL}
           quantity={item.quantity}
           removeOne={() => handleRemoveOne(item)} // Pass the function with the item

@@ -5,6 +5,13 @@
   cursor: pointer;
 }
 
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
 .shopBtn {
   background-color: blue;
   color: white;
@@ -12,7 +19,11 @@
   height: 50px;
 }
 
-.checkout {
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: red;
   color: white;
   width: 100px;

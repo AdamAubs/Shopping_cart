@@ -7,12 +7,13 @@ export default function ProductCard({
   title,
   description,
   imageURL,
+  price,
 }) {
   const { addToCart } = useContext(ShoppingCartContext);
 
   const handleAddToCart = () => {
     console.log(productID);
-    addToCart({ productID, title, description, imageURL });
+    addToCart({ productID, title, description, imageURL, price });
   };
 
   return (

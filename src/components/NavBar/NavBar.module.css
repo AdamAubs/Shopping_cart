@@ -2,10 +2,153 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(27, 112, 187);
+  background-color: rgb(183, 191, 197);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 15px 30px; /* More padding for a spacious look */
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  color: white; /* Ensure text is readable on the gradient */
+}
+
+.navBar a {
+  text-decoration: none; /* Remove underline from links */
+  color: white;
+  font-weight: bold;
+  margin: 0 15px;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navBar a:hover {
+  color: #ffdf00; /* Highlight links on hover */
+}
+
+.cartList {
+  display: flex;
+  gap: 20px;
+}
+
+.shopBtn:active {
+  transform: scale(0.95); /* Pressed effect */
 }
 
 .shopBtn {
-  background-color: blue;
+  background-color: #ff6f61; /* Vibrant button color */
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-auto-rows: auto; /* Automatically adjust row height */
+  gap: 10px; /* Add spacing between items */
+  background-color: #404040;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cartImage {
+  display: flex;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Ensure images fit nicely */
+  border-radius: 10px;
+}
+
+.quantity {
+  position: relative;
+  left: 10px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Hide menu by default on smaller screens */
+.navLinks {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    position: fixed; /* Fix the navbar to the top of the viewport */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the full width of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: rgb(183, 191, 197); /* Keep the background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 15px 30px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    color: white;
+  }
+
+  .cartList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .shopBtn {
+    margin-top: 10px;
+    width: 100%; /* Full-width button on mobile */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on smaller screens */
+  }
+
+  .navLinks {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background-color: rgb(183, 191, 197);
+    width: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navLinks.showMenu {
+    display: flex; /* Show menu when toggled */
+  }
+
+  .navLinks li {
+    margin: 10px 0;
+  }
 }
