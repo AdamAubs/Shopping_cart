@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PurchaseForm.module.css";
 
@@ -14,6 +14,8 @@ export default function PurchaseForm() {
     cvv: "",
   });
 
+  const { cartItems, updatePurchasedItems, clearCart } =
+    useContext(ShoppingCartContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -28,7 +30,9 @@ export default function PurchaseForm() {
     e.preventDefault();
     // console.log("Form submitted:", formData);
     // console.log("Order: ", cartItems);
+    updatePurchasedItems(cartItems);
     navigate("/confirmation");
+    clearCart();
     // Add form submission logic here (e.g., send data to a server)
   };
 

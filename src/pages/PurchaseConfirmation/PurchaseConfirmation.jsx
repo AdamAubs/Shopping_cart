@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import styles from "./PurchaseConfirmation.module.css";
 
 export default function PurchaseConfirmation() {
-  const { cartItems } = useContext(ShoppingCartContext);
+  const { purchaseItems } = useContext(ShoppingCartContext);
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function PurchaseConfirmation() {
         <h1>Thank you for your purchase!</h1>
         <h3>Items Purchased:</h3>
         <ul>
-          {cartItems.map((item) => (
+          {purchaseItems.map((item) => (
             <div className={styles.purchasedItemsContainer}>
               <p className={styles.title}>{item.title}</p>
               <div className={styles.cartImage}>

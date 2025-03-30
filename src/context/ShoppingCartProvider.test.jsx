@@ -34,7 +34,3 @@ test("calculates that cart total correctly", () => {
 
   expect(result.current.getCartTotal()).toBe(30);
 });
-
-/*
-INTEGRATION TEST
-*/

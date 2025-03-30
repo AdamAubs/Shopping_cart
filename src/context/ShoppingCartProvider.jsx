@@ -3,6 +3,7 @@ import { ShoppingCartContext } from "./ShoppingCartContext";
 
 export function ShoppingCartProvider({ children, initialCartItem = [] }) {
   const [cartItems, setCartItems] = useState(initialCartItem);
+  const [purchaseItems, setPurchasedItems] = useState([]);
 
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => {
@@ -51,8 +52,8 @@ export function ShoppingCartProvider({ children, initialCartItem = [] }) {
     });
   };
 
-  const updateCartItems = (newItems) => {
-    setCartItems(newItems);
+  const updatePurchasedItems = (newItems) => {
+    setPurchasedItems(newItems);
   };
 
   const clearCart = () => {
@@ -63,10 +64,11 @@ export function ShoppingCartProvider({ children, initialCartItem = [] }) {
     <ShoppingCartContext.Provider
       value={{
         cartItems,
+        purchaseItems,
         addToCart,
         removeFromCart,
         getCartTotal,
-        updateCartItems,
+        updatePurchasedItems,
         clearCart,
       }}
     >
