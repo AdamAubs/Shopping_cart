@@ -1,28 +1,35 @@
-# Shopping Cart - A simple way to look, buy, and purchase items
+# 🛒 [Shopping Cart - A Simple Way to Look, Buy, and Purchase Items](https://simple-shopping-cart-zeta.vercel.app/)
 
-- Users can add items to cart, manipulate cart items in cart page, and
-  purchase the fake items. When the user clicks purchase there data can then be sent to a server to handle its request.
+A simple shopping cart app where users can browse items, add them to the cart, manipulate cart items, and simulate purchases. When users click "purchase," their data is sent to a server for further processing.  
 
-## Data retrieval
+## 🚀 Features  
+✅ Browse and add items to the cart  
+✅ Update or remove cart items  
+✅ Simulated purchase process  
+✅ Data persistence using React Context  
 
-- Retrieves Item from https://fakestoreapi.com
-- Stores items in context named ProductsContext and is used
-  to store all the product data fetched from https://fakestoreapi.com
-- ShoppingCartContext stores the context of the users shopping cart
-  across the entire app.
+---
 
-## Testing
+## 📦 Data Retrieval  
 
-### Unit Tests
+The app fetches product data from [FakeStoreAPI](https://fakestoreapi.com/) and manages it using React Context:  
 
-- **Location:** stored in same directory of what files logic they are testing
-- **Purpose:** tests logic
+- **ProductsContext** – Stores and provides all product data.  
+- **ShoppingCartContext** – Manages the user's shopping cart across the entire app.  
 
-  Example: Does the getCartTotal function calculate totals correctly?
+---
 
-### Integration Tests
+## 🧪 Testing  
 
-- **Location:** Stored in the **tests** directory at the root of src/
-- **Purpose:** Test how multiple components/context work together
+### ✅ Unit Tests  
+- **Location:** Stored alongside the files they test.  
+- **Purpose:** Validate individual functions and logic.  
+- **Example:** Checking if `getCartTotal()` correctly calculates cart totals.  
 
-  Example: Does the ShoppingCartProvider update the cart when an item is added?
+### 🔗 Integration Tests  
+- **Location:** Stored in the `/tests` directory inside `src/`.  
+- **Purpose:** Ensure multiple components and contexts work together correctly.  
+- **Example:** Verifying if `ShoppingCartProvider` updates the cart when an item is added.  
+
+---
+
