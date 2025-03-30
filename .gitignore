@@ -1,0 +1,40 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+
+# Vite specific
+/.vite/
+
+# Dependencies and lock files
+package-lock.json
+yarn.lock
+
+# IDE and editor settings
+/.vscode/
+/.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# TypeScript type declaration files
+*.d.ts
+
+# Testing coverage
+/coverage/
+
+# Temporary files
+*.swp
+*.swo
