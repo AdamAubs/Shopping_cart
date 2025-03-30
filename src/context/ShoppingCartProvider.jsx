@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { ShoppingCartContext } from "./ShoppingCartContext";
 
-export function ShoppingCartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([
-    /* List of Items in Cart */
-  ]);
+export function ShoppingCartProvider({ children, initialCartItem = [] }) {
+  const [cartItems, setCartItems] = useState(initialCartItem);
+
+  const getCartTotal = () => {
+    return cartItems.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  };
 
   // Add an item to the cart
   const addToCart = (product) => {
@@ -13,6 +17,7 @@ export function ShoppingCartProvider({ children }) {
       const existingItem = prevItems.find(
         (item) => item.productID === product.productID
       );
+      console.log(prevItems);
       if (existingItem) {
         // If the item already exists, update its quantity
         return prevItems.map((item) =>
@@ -46,9 +51,24 @@ export function ShoppingCartProvider({ children }) {
     });
   };
 
+  const updateCartItems = (newItems) => {
+    setCartItems(newItems);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <ShoppingCartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        getCartTotal,
+        updateCartItems,
+        clearCart,
+      }}
     >
       {children}
     </ShoppingCartContext.Provider>

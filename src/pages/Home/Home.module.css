@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  .homeContainer {
+    display: flex;
+    flex-direction: column; /* Stack NavBar and Clearance vertically */
+    min-height: 100vh; /* Ensure the container takes up the full viewport height */
+    overflow: auto; /* Allow scrolling when content overflows */
+  }
+
+  .clearance {
+    z-index: 1;
+  }
+
+  .navbar {
+    z-index: -1;
+  }
+}
